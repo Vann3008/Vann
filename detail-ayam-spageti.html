@@ -2,110 +2,253 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detail Produk</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Ayam Geprek Saus Spageti | AYO NONGKRONG</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        body {
-            background: linear-gradient(to bottom right, #ff7779, #ffe771);
-            font-family: 'Segoe UI', sans-serif;
+        body{
+            font-family:'Segoe UI',sans-serif;
+            background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+            background-attachment:fixed;
+            color:white;
         }
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
+        /* Navbar */
+        .navbar{
+            background:rgba(15,23,42,.95)!important;
+            backdrop-filter:blur(10px);
+            box-shadow:0 5px 20px rgba(0,0,0,.35);
+            padding:15px 0;
         }
 
-        .product-detail-card {
-            max-width: 700px;
-            margin: 50px auto;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        .logo{
+            width:240px;
         }
 
-        .product-detail-card img {
-            border-radius: 12px;
-            margin-bottom: 20px;
+        /* Card Detail */
+        .product-detail-card{
+            max-width:850px;
+            margin:60px auto;
+            background:rgba(255,255,255,.08);
+            backdrop-filter:blur(18px);
+            border:1px solid rgba(255,255,255,.15);
+            border-radius:20px;
+            padding:35px;
+            box-shadow:0 20px 40px rgba(0,0,0,.35);
         }
 
-        .btn-back {
-            margin-top: 24px;
+        .product-detail-card img{
+            width:100%;
+            border-radius:18px;
+            margin:25px 0;
+        }
+
+        h2{
+            color:#FFC107;
+            font-size:42px;
+            font-weight:bold;
+        }
+
+        p{
+            color:#e5e7eb;
+            font-size:18px;
+        }
+
+        .harga{
+            color:#FFC107;
+            font-size:26px;
+            font-weight:bold;
+        }
+
+        .btn-kembali{
+            border:2px solid #FFC107;
+            color:#FFC107;
+            border-radius:50px;
+            padding:10px 25px;
+        }
+
+        .btn-kembali:hover{
+            background:#FFC107;
+            color:#111827;
+        }
+
+        .btn-keranjang{
+            background:#FFC107;
+            color:#111827;
+            border:none;
+            border-radius:50px;
+            padding:10px 25px;
+            font-weight:bold;
+        }
+
+        .btn-keranjang:hover{
+            background:#ffd54f;
+        }
+
+        .btn-cart{
+            background:#FFC107;
+            color:#111827;
+            border:none;
+            border-radius:40px;
+            padding:10px 25px;
+            font-weight:bold;
+        }
+
+        .modal-content{
+            background:#1e293b;
+            color:white;
+        }
+
+        .modal-header{
+            border-bottom:1px solid rgba(255,255,255,.2);
+        }
+
+        .modal-footer{
+            border-top:1px solid rgba(255,255,255,.2);
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar/Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="logo.png" alt="Nongkrong Barengs" height="60" class="me-2">
-            </a>
-            <button class="btn btn-warning ms-auto" onclick="viewCart()">Keranjang</button>
-        </div>
-    </nav>
 
-    <!-- Detail Produk -->
+<nav class="navbar navbar-expand-lg">
     <div class="container">
-        <div class="product-detail-card text-center">
-            <h2><strong>Ayam Saus</strong></h2>
-            <img src="https://as2.ftcdn.net/jpg/05/57/34/69/1000_F_557346931_76Qp4utoQ2Q2Ou8lF3vldmWgtlwr275k.jpg"
-                class="img-fluid" alt="Ayam Geprek">
-            <p class="mt-3">Ayam goreng tepung dibaluri dengan saus spageti.</p>
-            <p><strong>Harga:</strong> Rp 10.000</p>
-            <div class="d-flex justify-content-center gap-2">
-                <a href="index.html" class="btn btn-outline-secondary">← Kembali</a>
-                <button class="btn btn-danger" onclick="addToCart('Ayam Saus Spageti', 10000)">+ Keranjang</button>
-            </div>
+
+        <a class="navbar-brand" href="index.html">
+            <img src="logo3.png" class="logo">
+        </a>
+
+        <button class="btn btn-cart ms-auto" onclick="viewCart()">
+            Keranjang
+        </button>
+
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="product-detail-card text-center">
+
+        <h2>Ayam Geprek Saus Spageti</h2>
+
+        <img src="https://as2.ftcdn.net/jpg/05/57/34/69/1000_F_557346931_76Qp4utoQ2Q2Ou8lF3vldmWgtlwr275k.jpg">
+
+        <p>
+            Ayam geprek renyah yang dipadukan dengan saus spageti spesial.
+            Perpaduan rasa gurih, pedas, dan manis membuat menu ini menjadi favorit pelanggan.
+        </p>
+
+        <div class="harga">
+            Rp 10.000
         </div>
+
+        <div class="mt-4">
+
+            <a href="index.html" class="btn btn-kembali">
+                ← Kembali
+            </a>
+
+            <button class="btn btn-keranjang"
+                onclick="addToCart('Ayam Geprek Saus Spageti',10000)">
+                + Keranjang
+            </button>
+
+        </div>
+
     </div>
 
-    <!-- Cart Modal (optional reuse from index.html) -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Keranjang Belanja</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-                </div>
-                <div class="modal-body" id="cartItems"></div>
-                <div class="modal-footer d-flex justify-content-between align-items-center">
-                    <strong>Total: Rp <span id="cartTotal">0</span></strong>
-                    <a href="checkout.html" class="btn btn-success">Checkout</a>
-                </div>
+</div>
+
+<!-- Modal Keranjang -->
+
+<div class="modal fade" id="cartModal">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5>Keranjang Belanja</h5>
+
+                <button class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"></button>
+
             </div>
+
+            <div class="modal-body" id="cartItems">
+
+            </div>
+
+            <div class="modal-footer justify-content-between">
+
+                <strong>
+                    Total : Rp <span id="cartTotal">0</span>
+                </strong>
+
+                <a href="checkout.html" class="btn btn-success">
+                    Checkout
+                </a>
+
+            </div>
+
         </div>
+
     </div>
 
-    <!-- Scripts -->
-    <script>
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+</div>
 
-        function addToCart(item, price) {
-            cart.push({ item, price });
-            localStorage.setItem("cart", JSON.stringify(cart));
-            alert(`${item} ditambahkan ke keranjang.`);
-        }
+<script>
 
-        function viewCart() {
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            cartItems.innerHTML = '';
-            let total = 0;
-            cart.forEach(({ item, price }, index) => {
-                total += price;
-                const div = document.createElement('div');
-                div.textContent = `${index + 1}. ${item} - Rp ${price}`;
-                cartItems.appendChild(div);
-            });
-            cartTotal.textContent = total;
-            new bootstrap.Modal(document.getElementById('cartModal')).show();
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+const cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+function addToCart(item,price){
+
+cart.push({item,price});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert(item+" berhasil ditambahkan ke keranjang.");
+
+}
+
+function viewCart(){
+
+const cartItems=document.getElementById("cartItems");
+
+const cartTotal=document.getElementById("cartTotal");
+
+cartItems.innerHTML="";
+
+let total=0;
+
+cart.forEach((produk,index)=>{
+
+total+=produk.price;
+
+cartItems.innerHTML+=`
+<div class="mb-2">
+${index+1}. ${produk.item}
+<span class="float-end">
+Rp ${produk.price}
+</span>
+</div>
+`;
+
+});
+
+cartTotal.innerHTML=total;
+
+new bootstrap.Modal(document.getElementById("cartModal")).show();
+
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>
